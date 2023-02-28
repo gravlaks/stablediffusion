@@ -66,7 +66,7 @@ class InpaintPipeline(CustomBasePipeline):
         mask = self.initialize_mask(mask_image,
                                     text_embeddings.dtype, 
                                     num_images_per_prompt=num_images_per_prompt)
-
+        print(mask.shape, init_latents.shape)
         if not mask.shape == init_latents.shape:
             raise ValueError("The mask and init_image should be the same size!")
 
